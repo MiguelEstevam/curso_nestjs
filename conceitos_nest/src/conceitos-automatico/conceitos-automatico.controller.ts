@@ -3,10 +3,12 @@ import { ConceitosAutomaticoService } from './conceitos-automatico.service';
 
 @Controller('conceitos-automatico')
 export class ConceitosAutomaticoController {
-    constructor(private readonly conceitoAumaticoService: ConceitosAutomaticoService) {}
+  constructor(
+    private readonly conceitoAumaticoService: ConceitosAutomaticoService,
+  ) {}
 
-    @Get()
-    home(): string{
-        return this.conceitoAumaticoService.getHome();
-    }
+  @Get()
+  home(): string {
+    return this.conceitoAumaticoService.getHome();
+  }
 }
