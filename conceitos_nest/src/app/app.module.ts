@@ -4,9 +4,24 @@ import { AppService } from './app.service';
 //import { ConceitosManualModule } from 'src/conceitos-manual/conceitos-manual.module';
 //import { ConceitosAutomaticoModule } from 'src/conceitos-automatico/conceitos-automatico.module';
 import { RecadosModule } from 'src/recados/recados.module';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { PessoasModule } from 'src/pessoas/pessoas.module';
 
 @Module({
-  imports: [RecadosModule],
+  imports: [
+    TypeOrmModule.forRoot({
+      type: 'postgres',
+      host: 'localhost',
+      port: 5432,
+      username: 'admin',
+      database: 'postgres',
+      password: 'root',
+      autoLoadEntities: true,
+      synchronize: true,
+    }),
+    RecadosModule,
+    PessoasModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

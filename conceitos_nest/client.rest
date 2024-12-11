@@ -6,35 +6,62 @@ GET {{baseUrl}}/recados/
 ?limit=10
 &offset=0
 ### Lista apenas um recado
-GET {{baseUrl}}/recados/2/
+GET {{baseUrl}}/recados/3/
 ### Cria um recado
 POST {{baseUrl}}/recados/
 Content-Type: application/json
 
 {
-    "recado": "",
-    "nova chave": "outro valor",
-    "texto": "",
+    "texto": "4 NOVO Recado",
     "de": "Joana",
-    "para": "João",
-    "lido": false,
-    "data": "2024-08-08T11:32:39.624Z"
+    "para": "João"
 }
 ### Atualiza um recado
-PATCH {{baseUrl}}/recados/2/
+PATCH {{baseUrl}}/recados/4/
 Content-Type: application/json
 
 {
-    "recado": "Este é o recado que estou enviando.",
-    "atualizar": true,
-    "texto": "ATUALIZAR Recado",
-    "de": "Joana",
-    "para": "João",
-    "lido": false,
-    "data": "2024-08-08T11:32:39.624Z"
+    "lido": false
 }
 ### Apaga um recado
-DELETE {{baseUrl}}/recados/2/
+DELETE {{baseUrl}}/recados/5/
+
+
+
+# 
+
+
+
+# Pessoas
+### Lista todas as pessoas
+GET {{baseUrl}}/pessoas/
+?limit=10
+&offset=0
+### Lista apenas uma pessoa
+GET {{baseUrl}}/pessoas/3/
+### Cria uma pessoa
+POST {{baseUrl}}/pessoas/
+Content-Type: application/json
+
+{
+    "email": "email1@email.com",
+    "password": "123456",
+    "nome": "Luiz"
+}
+### Atualiza um recado
+PATCH {{baseUrl}}/pessoas/1/
+Content-Type: application/json
+
+{
+    "password": "aaaaaa"
+}
+### Apaga um recado
+DELETE {{baseUrl}}/pessoas/3/
+
+
+
+#
+
 
 ### AppControllerGetHello
 
